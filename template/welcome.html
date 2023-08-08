@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informasi Seminar dan Lomba</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+   .hero {
+      background-image: url("https://via.placeholder.com/1200x500");
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    .btn-hero {
+      font-size: 20px;
+      padding: 12px 24px;
+      border-radius: 30px;
+    }
+
+    .btn-register {
+      background-color: #007bff;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .btn-login {
+      background-color: #6c757d;
+      color: #fff;
+    }
+
+    /* Additional Styling for Card Section */
+    .card-img-top {
+      max-height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .card-footer {
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+
+    .card-footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Informasi Seminar dan Lomba</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#upcoming-events">Upcoming Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Welcome to Our Website</h1>
+        <p>Get the latest updates about upcoming seminars and competitions.</p>
+        <a href="/register.html" class="btn btn-primary btn-hero" onclick="openRegisterModal()">Register Now</a>
+        <a href="/login.html" class="btn btn-secondary btn-hero">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <h2 id="upcoming-events">Upcoming Seminars and Competitions</h2>
+    <!-- Seminar and competition cards will be added here using Bootstrap grid -->
+    <div class="row">
+      <!-- Sample Card for Seminar -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Seminar Poster">
+          <div class="card-body">
+            <h5 class="card-title">Seminar Title 1</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet 1.</p>
+            <p class="card-text">Date: 2023-08-15</p>
+            <a href="#" class="btn btn-primary" onclick="openRegisterModal('Seminar Title 1')">Register</a>
+          </div>
+         
+        </div>
+      </div>
+
+      <!-- Sample Card for Competition -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/800x400" class="card-img-top" alt="Competition Poster">
+          <div class="card-body">
+            <h5 class="card-title">Competition Title 1</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet 1.</p>
+            <p class="card-text">Date: 2023-08-20</p>
+            <a href="#" class="btn btn-primary" onclick="openRegisterModal('Competition Title 1')">Register</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registration Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Register for Event</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ... Your footer section code ... -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
+
+  <script>
+    // Function to open the register modal or show SweetAlert2 to prompt registration
+    function openRegisterModal(eventName) {
+      // Check if the user is logged in (you can add your logic to check if the user is logged in or not)
+      const isLoggedIn = false; // Replace with your actual logic for checking login status
+
+      if (isLoggedIn) {
+        // Update the modal title with the selected event name
+        document.getElementById("registerModalLabel").innerText = `Register for "${eventName}"`;
+
+        // Get the registration form elements
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+
+        // Fill the form with dummy data (you can replace this with actual user data)
+        nameInput.value = "John Doe";
+        emailInput.value = "johndoe@example.com";
+        phoneInput.value = "123456789";
+
+        // Open the modal
+        $('#registerModal').modal('show');
+      } else {
+        // Show SweetAlert2 to ask the user to register/login first
+        Swal.fire({
+          icon: 'info',
+          title: 'Register/Login Required',
+          text: 'Please register or login to continue with the registration process.',
+          confirmButtonColor: '#007bff',
+        }).then(() => {
+          // Scroll back to the top of the page after dismissing the alert
+          window.scrollTo(0, 0);
+        });
+      }
+    }
+  </script>
+</body>
+
+</html>

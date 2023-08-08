@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Seminars</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- SweetAlert CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+    }
+
+    .jumbotron {
+      background-color: #007bff;
+      color: #fff;
+      padding: 4rem 2rem;
+    }
+
+    .jumbotron h1 {
+      font-size: 48px;
+    }
+
+    .jumbotron p {
+      font-size: 20px;
+    }
+
+    .btn-primary,
+    .btn-success {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    .card {
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 16px;
+      color: #666;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    .ad-container {
+      background-color: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .ad-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .ad-image {
+      max-height: 200px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Informasi Seminar dan Lomba</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Seminar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/view-competitions.html">Competitions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <h2>Upcoming Seminars</h2>
+    <div class="form-group">
+      <input type="text" class="form-control" id="searchInput" placeholder="Search seminars...">
+    </div>
+    <div class="row" id="seminarList">
+      <!-- Seminar cards will be dynamically added here using JavaScript -->
+    </div>
+  </div>
+
+  <!-- Modal for Register Now -->
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Register Now</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Please fill in the form to register for the seminar.</p>
+          <form id="registrationForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone or Whatsapp</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="registerBtn">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <!-- <footer>
+    <div class="container">
+      <p>&copy; 2023 Informasi Seminar dan Lomba. All rights reserved.</p>
+    </div>
+  </footer> -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- SweetAlert JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+
+  <script>
+    // Sample seminar data (you can replace this with actual data from your backend)
+    const seminars = [
+      { title: "Seminar Title 1", description: "Lorem ipsum dolor sit amet 1.", date: "2023-08-15" },
+      { title: "Seminar Title 2", description: "Lorem ipsum dolor sit amet 2.", date: "2023-09-10" },
+      { title: "Seminar Title 3", description: "Lorem ipsum dolor sit amet 3.", date: "2023-10-05" },
+      // Add more seminar data here
+    ];
+
+    // Function to generate HTML for a seminar card
+    function generateSeminarCard(seminar) {
+      return `
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">${seminar.title}</h5>
+            <p class="card-text">${seminar.description}</p>
+            <p class="card-text">Date: ${seminar.date}</p>
+            <a href="#" class="btn btn-primary" onclick="openRegisterModal('${seminar.title}')">Register Now</a>
+          </div>
+        </div>
+      </div>
+      `;
+    }
+
+    // Function to render seminars based on search input
+    function renderSeminars() {
+      const searchInput = document.getElementById("searchInput").value.toLowerCase();
+      const seminarList = document.getElementById("seminarList");
+      seminarList.innerHTML = "";
+
+      seminars.forEach((seminar) => {
+        const title = seminar.title.toLowerCase();
+        const description = seminar.description.toLowerCase();
+        if (title.includes(searchInput) || description.includes(searchInput)) {
+          seminarList.innerHTML += generateSeminarCard(seminar);
+        }
+      });
+    }
+
+    // Initial render of seminars
+    renderSeminars();
+
+    // Event listener for search input
+    document.getElementById("searchInput").addEventListener("keyup", renderSeminars);
+
+    // Function to open the register modal
+    function openRegisterModal(seminarTitle) {
+      // Update the modal title with the selected seminar title
+      document.getElementById("registerModalLabel").innerText = `Register for "${seminarTitle}"`;
+
+      // Get the registration form elements
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const phoneInput = document.getElementById("phone");
+
+      // Fill the form with dummy data (you can replace this with actual user data)
+      nameInput.value = "Muhamad Fajar";
+      emailInput.value = "mfajar2123@gmail.com";
+      phoneInput.value = "082175758382";
+
+      // Open the modal
+      $('#registerModal').modal('show');
+    }
+
+    // Function to handle registration form submission
+    document.getElementById("registerBtn").addEventListener("click", function () {
+      // Here you can add the logic to submit the registration form to your backend
+      // For this example, we'll show a success message using SweetAlert2
+      Swal.fire({
+        icon: 'success',
+        title: 'Registration Successful',
+        text: 'You have successfully registered for the seminar!',
+        confirmButtonColor: '#007bff',
+      });
+
+      // Close the modal after successful registration
+      $('#registerModal').modal('hide');
+    });
+  </script>
+</body>
+
+</html>

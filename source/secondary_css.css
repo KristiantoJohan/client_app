@@ -1,0 +1,103 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('font/Montserrat-VariableFont_wght.ttf');
+}
+
+.mainFont {
+    font-family: Montserrat;
+    color: #2C2F6F;
+    font-weight: bold;
+}
+
+.navBarLinkFont {
+    font-family: Montserrat;
+    color: #2C2F6F;
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-font {
+    font-family: Montserrat;
+    
+}
+
+.text-color {
+    color: #2C2F6F;
+}
+
+.hero-button {
+    margin-left: 100px;
+    margin-top: 175px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.hero-button-2 {
+    margin-left: 10px;
+    margin-top: 175px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.hero {
+    background-image: url("images/test_image.png");
+    background-size: cover;
+    background-position: left;
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    align-items: center; 
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+}
+
+.logo-padding {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.logo-title-padding {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.card-description-padding {
+    padding-top: 20px;
+    padding-left: 30px;
+    margin-right: 10px;
+}
+
+.profile-logo {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.profile-name {
+    margin-left: -120px;
+    font-weight: 600;
+}
+
+.custom-background {
+    background-color: #2C2F6F;
+}
+
+.footer-link:link {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.footer-link:visited {
+    text-decoration: none;
+}
+  
+.footer-link:hover {
+    text-decoration: underline;
+}
