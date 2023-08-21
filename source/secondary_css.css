@@ -9,9 +9,20 @@
     font-weight: bold;
 }
 
+.custom-font {
+    font-family: Montserrat;
+    color: #2C2F6F;
+}
+
 .navBarLinkFont {
     font-family: Montserrat;
     color: #2C2F6F;
+    font-weight: 600;
+}
+
+.navBarLinkFont:active {
+    font-family: Montserrat;
+    color: #4147bc;
     font-weight: 600;
 }
 
@@ -100,8 +111,4 @@
   
 .footer-link:hover {
     text-decoration: underline;
-}
-
-.navBarLinkFont:active {
-    
 }

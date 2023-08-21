@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="secondary_css.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"> </script>
+</head>
+
+<body>
+    <nav class="navbar sticky-navbar sticky-top navbar-expand-sm navbar-light bg-white shadow mainFont">
+        <div class="container-fluid">
+            <img src="images/eventlink_logo.png" width="40px;" style="padding-right: 10px;">
+            <a class="navbar-brand mainFont" href="#"> EventLink </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav d-flex mx-auto justify-content-center">
+                    <li class="nav-item navBarLinkFont">
+                        <a class="nav-link navBarLinkFont" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item navBarLinkFont">
+                        <a class="nav-link navBarLinkFont active" href="#">Seminar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navBarLinkFont" href="view-competitions.html">Competitions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navBarLinkFont" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navBarLinkFont" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+      <div class="row" style="padding-bottom: 40pt;"> 
+          <h2 class="custom-font" style="text-align: center;"> Upcoming Seminars </h2>
+      </div>
+      <div class="row">
+          <div class="col-md-6" style="padding-bottom: 40pt;">
+              <div class="row">
+                  <div class="col-md-1">
+                      <img src="images/search_icon.png" style="padding-left: 10pt;">
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search seminars...">
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+    <div class="row" id="seminarList">
+      <!-- Seminar cards will be dynamically added here using JavaScript -->
+    </div> <br> <br>
+    <div class="row" id="seminarList_2">
+      <!-- Seminar cards will be dynamically added here using JavaScript -->
+    </div> <br> <br>
+  </div>
+
+  <div class="container">
+      <div class="row">
+          <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+  </div> <br> <br>
+
+  <!-- Modal for Register Now -->
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Register Now</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Please fill in the form to register for the seminar.</p>
+          <form id="registrationForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone or Whatsapp</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="registerBtn">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-lg-start custom-background text-white">
+    <section class="" style="padding-top: 10px;">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4"> EventLink.com </h6>
+                    <p>
+                        Kembangkan potensimu sekarang juga! Eventlink menyediakan berbagai seminar menarik, kursus beraneka ragam, dan
+                        berbagai perlombaan yang bisa kamu ikuti. Sebarluaskan juga event milikmu bersama kami.
+                    </p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">
+                        SOCIAL MEDIA
+                    </h6>
+                    <p>
+                        <img src="images/instagram_logo.png">
+                        <a href="#!" class="text-reset footer-link"> Instagram </a>
+                    </p>
+                    <p>
+                        <img src="images/tiktok_logo.png">
+                        <a href="#!" class="text-reset footer-link"> TikTok </a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4"> Tautan Cepat </h6>
+                    <p> <a href="#!" class="text-reset footer-link"> Sign In </a> </p>
+                    <p> <a href="#!" class="text-reset footer-link"> Partnership </a> </p>
+                    <p> <a href="#!" class="text-reset footer-link"> Career </a> </p>
+                    <p> <a href="#!" class="text-reset footer-link"> Privacy Policy </a> </p>
+                    <p> <a href="#!" class="text-reset footer-link"> Terms & Condition </a> </p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4"> Office & Contact </h6>
+                    <p> Jl. Pendidikan No.15, Cibiru Wetan, Kec. Cileunyi, Kabupaten Bandung, Jawa Barat 40625 </p>
+                    <p> 
+                        <img src="images/email_logo.png">
+                        eventlink07@gmail.com
+                    </p>
+                    <p>
+                        <img src="images/whatsapp_logo.png">
+                        +62 821 1688 3633
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+        © 2023 Copyright:
+        <a class="text-reset fw-bold footer-link" href="#">EventLink.com</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- SweetAlert JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+
+  <script>
+    // Sample seminar data (you can replace this with actual data from your backend)
+    const seminars = [
+      { imageHref: "https://via.placeholder.com/300x200",title: "Seminar Title 1", description: "Lorem ipsum dolor sit amet 1.", date: "2023-08-15" },
+      { imageHref: "https://via.placeholder.com/300x200", title: "Seminar Title 2", description: "Lorem ipsum dolor sit amet 2.", date: "2023-09-10" },
+      { imageHref: "https://via.placeholder.com/300x200", title: "Seminar Title 3", description: "Lorem ipsum dolor sit amet 3.", date: "2023-10-05" },
+      { imageHref: "https://via.placeholder.com/300x200", title: "Seminar Title 4", description: "Lorem ipsum dolor sit amet 3.", date: "2023-10-05" },
+      // Add more seminar data here
+    ];
+
+    const seminars_2nd = [
+      { imageHref: "https://via.placeholder.com/300x200",title: "Seminar Title 5", description: "Lorem ipsum dolor sit amet 1.", date: "2023-08-15" },
+      { imageHref: "https://via.placeholder.com/300x200", title: "Seminar Title 6", description: "Lorem ipsum dolor sit amet 2.", date: "2023-09-10" },
+      { imageHref: "https://via.placeholder.com/300x200", title: "Seminar Title 7", description: "Lorem ipsum dolor sit amet 3.", date: "2023-10-05" },
+      { imageHref: "https://via.placeholder.com/300x200", title: "Seminar Title 8", description: "Lorem ipsum dolor sit amet 3.", date: "2023-10-05" },
+      // Add more seminar data here
+    ];
+
+    // Function to generate HTML for a seminar card
+    function generateSeminarCard(seminar) {
+      return `
+      <div class="col-md-3 mb-3">
+          <div class="card shadow-lg border-white">
+              <img src="${seminar.imageHref}" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">${seminar.title}</h5>
+                  <p class="card-text">${seminar.description}</p>
+                  <p class="card-text">Date: ${seminar.date}</p>
+                  <a href="#" class="btn btn-primary" onclick="openRegisterModal('${seminar.title}')">Register Now</a>
+              </div>
+          </div>
+      </div>
+      `;
+    }
+
+    // Function to render seminars based on search input
+    function renderSeminars() {
+      const searchInput = document.getElementById("searchInput").value.toLowerCase();
+      const seminarList = document.getElementById("seminarList");
+      seminarList.innerHTML = "";
+
+      seminars.forEach((seminar) => {
+        const title = seminar.title.toLowerCase();
+        const description = seminar.description.toLowerCase();
+        if (title.includes(searchInput) || description.includes(searchInput)) {
+          seminarList.innerHTML += generateSeminarCard(seminar);
+        }
+      });
+    }
+
+    // Function to render seminars based on search input
+    function renderSeminars_2nd() {
+      const searchInput = document.getElementById("searchInput").value.toLowerCase();
+      const seminarList = document.getElementById("seminarList_2");
+      seminarList.innerHTML = "";
+
+      seminars_2nd.forEach((seminar) => {
+        const title = seminar.title.toLowerCase();
+        const description = seminar.description.toLowerCase();
+        if (title.includes(searchInput) || description.includes(searchInput)) {
+          seminarList.innerHTML += generateSeminarCard(seminar);
+        }
+      });
+    }
+
+    // Initial render of seminars
+    renderSeminars();
+    renderSeminars_2nd()
+
+    // Event listener for search input
+    document.getElementById("searchInput").addEventListener("keyup", renderSeminars);
+
+    // Function to open the register modal
+    function openRegisterModal(seminarTitle) {
+      // Update the modal title with the selected seminar title
+      document.getElementById("registerModalLabel").innerText = `Register for "${seminarTitle}"`;
+
+      // Get the registration form elements
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const phoneInput = document.getElementById("phone");
+
+      // Fill the form with dummy data (you can replace this with actual user data)
+      nameInput.value = "Muhamad Fajar";
+      emailInput.value = "mfajar2123@gmail.com";
+      phoneInput.value = "082175758382";
+
+      // Open the modal
+      $('#registerModal').modal('show');
+    }
+
+    // Function to handle registration form submission
+    document.getElementById("registerBtn").addEventListener("click", function () {
+      // Here you can add the logic to submit the registration form to your backend
+      // For this example, we'll show a success message using SweetAlert2
+      Swal.fire({
+        icon: 'success',
+        title: 'Registration Successful',
+        text: 'You have successfully registered for the seminar!',
+        confirmButtonColor: '#007bff',
+      });
+
+      // Close the modal after successful registration
+      $('#registerModal').modal('hide');
+    });
+  </script>
+</body>
+
+</html>
